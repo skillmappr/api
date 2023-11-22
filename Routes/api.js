@@ -6,7 +6,7 @@ router.post('/buscaTodos', async (req, res) => {
 
   const session = driver.session();
   try {
-    const resultFixo = await session.run("MATCH (n)    OPTIONAL MATCH (n)-[r]-()    RETURN n, labels(n) AS labels, collect(DISTINCT r) AS relationships");
+    const resultFixo = await session.run("MATCH (n) OPTIONAL MATCH (n)-[r]-(m) RETURN n, r, m");
     const nodesFixo = resultFixo.records.map(record => record.get(0).properties);
     res.json(nodesFixo);
 
