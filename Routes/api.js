@@ -9,9 +9,9 @@ router.post('/buscaTodos', async (req, res) => {
     const resultFixo = await session.run("MATCH (n) OPTIONAL MATCH (n)-[r]-(m) RETURN n, r, m");
     const nodesFixo = resultFixo.records.map(record => {
       return {
-        conteudo: record.get('n').properties,
-        relacao: record.get('r').type,
-        eixo: record.get('m').properties
+        n: record.get('n').properties,
+        r: record.get('r').type,
+        m: record.get('m').properties
       };
     });
     res.json(nodesFixo);
@@ -182,9 +182,9 @@ router.post('/buscaGeralDerivada', async (req, res) => {
     const resultFixo = await session.run("MATCH (comp_geral_egres:SBC_CompetenciaGeralEgresso) MATCH (comp_deriv:SBC_CompetenciaDerivada)-[r:CONTRIBUI_PARA]->(comp_geral_egres) RETURN comp_deriv, r, comp_geral_egres");
     const nodesFixo = resultFixo.records.map(record => {
       return {
-        conteudo: record.get('comp_deriv').properties,
+        competenciaDerivada: record.get('comp_deriv').properties,
         relacao: record.get('r').type,
-        eixo: record.get('comp_geral_egres').properties
+        competenciaGeralEgresso: record.get('comp_geral_egres').properties
       };
     });
 
@@ -211,9 +211,9 @@ router.post('/buscaEspecificaDerivada', async (req, res) => {
     const resultFixo = await session.run("MATCH (comp_espec_egres:SBC_CompetenciaEspecificaEgresso) MATCH (comp_deriv:SBC_CompetenciaDerivada)-[r:CONTRIBUI_PARA]->(comp_espec_egres) RETURN comp_deriv, r, comp_espec_egres");
     const nodesFixo = resultFixo.records.map(record => {
       return {
-        conteudo: record.get('comp_deriv').properties,
+        competenciaDerivada: record.get('comp_deriv').properties,
         relacao: record.get('r').type,
-        eixo: record.get('comp_espec_egres').properties
+        competenciaEspecificaEgresso: record.get('comp_espec_egres').properties
       };
     });
 
@@ -242,7 +242,7 @@ router.post('/buscaConteudoDerivado', async (req, res) => {
       return {
         conteudo: record.get('conteudo').properties,
         relacao: record.get('r').type,
-        eixo: record.get('comp_deriv').properties
+        competenciaDerivada: record.get('comp_deriv').properties
       };
     });
     res.json(nodesFixo);
@@ -269,7 +269,7 @@ router.post('/buscaDerivadaEixos', async (req, res) => {
     const resultFixo = await session.run("MATCH (eixo:SBC_Eixo) MATCH (comp_deriv:SBC_CompetenciaDerivada)-[r:PERTENCE]->(eixo) RETURN comp_deriv, r, eixo");
     const nodesFixo = resultFixo.records.map(record => {
       return {
-        conteudo: record.get('comp_deriv').properties,
+        competenciaDerivada: record.get('comp_deriv').properties,
         relacao: record.get('r').type,
         eixo: record.get('eixo').properties
       };
