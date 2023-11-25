@@ -4,14 +4,23 @@ Api desenvolvida para ser possível efetuar as seguintes consultas:
 • Busca todos os dados do banco;
 
 • Busca todas as Competências Gerais;
+
 • Busca todas as Competências Específicas;
+
 • Busca todas as Competências Derivadas;
+
 • Busca todos os Conteúdos;
+
 • Busca todos os Eixos;
+
 • Busca os Conteúdos e os Eixos que eles pertencem;
+
 • Busca as Competências Gerais esperadas do egresso e as Competências Derivadas que são necessárias trabalhar para alcançar elas;
+
 • Busca as Competências Específicas esperadas do egresso e as Competências Derivadas que são necessárias trabalhar para alcançar elas;
+
 • Busca os Conteúdos que devem ser trabalhados para atingir as Competências Derivadas;
+
 • Busca as Competências Derivadas e os Eixos que elas pertencem;
 
 
