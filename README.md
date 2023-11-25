@@ -2,6 +2,7 @@
 Api desenvolvida para ser possível efetuar as seguintes consultas:
 
 • Busca todos os dados do banco;
+
 • Busca todas as Competências Gerais;
 • Busca todas as Competências Específicas;
 • Busca todas as Competências Derivadas;
