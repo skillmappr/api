@@ -14,7 +14,7 @@ Api desenvolvida para ser possível efetuar as seguintes consultas:
 • Busca as Competências Derivadas e os Eixos que elas pertencem;
 
 
-Segue o link para a documentação da api: https://documenter.getpostman.com/view/14079137/2s9YeD8YU4
+Segue o link para a documentação: https://documenter.getpostman.com/view/14079137/2s9YeD8YU4
 
 ## 👨‍💻 Participantes
 
